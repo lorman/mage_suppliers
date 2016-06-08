@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <HubCo_Suppliers>
+      <version>0.1.0</version>
+    </HubCo_Suppliers>
+  </modules>
+  <global>
+    <helpers>
+      <suppliers>
+        <class>HubCo_Suppliers_Helper</class>
+      </suppliers>
+    </helpers>
+	<blocks>
+	  <suppliers>
+		<class>HubCo_Suppliers_Block</class>
+	  </suppliers>
+	</blocks>
+	<models>
+	  <suppliers>
+		<class>HubCo_Suppliers_Model</class>
+		<resourceModel>suppliers_mysql4</resourceModel>
+	  </suppliers>
+	  <suppliers_mysql4>
+		<class>HubCo_Suppliers_Model_Mysql4</class>
+		<entities>		  
+			  <supplier>
+				<table>supplier</table>
+			  </supplier>
+		</entities>
+	  </suppliers_mysql4>
+	</models>
+	<resources>
+	  <suppliers_setup>
+		<setup>
+		  <module>HubCo_Suppliers</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </suppliers_setup>
+	  <suppliers_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </suppliers_write>
+	  <suppliers_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </suppliers_read>
+	</resources>
+  </global>
+  <admin>
+	<routers>
+	  <suppliers>
+	    <use>admin</use>
+		<args>
+		  <module>HubCo_Suppliers</module>
+		  <frontName>admin_suppliers</frontName>
+		</args>
+	  </suppliers>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <suppliers module="suppliers">
+		<title>Suppliers</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <suppliersbackend module="suppliers">
+			<title>Suupliers</title>
+			<sort_order>0</sort_order>
+			<action>admin_suppliers/adminhtml_suppliersbackend</action>
+		  </suppliersbackend>
+		  <supplier module="suppliers">
+		    <title>Manage Supplier</title>
+			<sort_order>0</sort_order>
+			<action>admin_suppliers/adminhtml_supplier</action>
+		  </supplier>
+		</children>
+	  </suppliers>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<suppliers translate="title" module="suppliers">
+			  <title>Suppliers</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <suppliersbackend translate="title">
+			<title>Suupliers</title>
+		  </suppliersbackend>
+		  <supplier translate="title">
+			<title>Manage Supplier</title>
+			<sort_order>0</sort_order>
+		  </supplier>
+			  </children>
+			</suppliers>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<suppliers>
+		  <file>suppliers.xml</file>
+		</suppliers>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

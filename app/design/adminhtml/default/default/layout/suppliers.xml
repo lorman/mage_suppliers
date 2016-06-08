@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <suppliers_adminhtml_suppliersbackend_index>
+	<reference name="content">
+	  <block type="suppliers/adminhtml_suppliersbackend" name="suppliersbackend" template="hubco/suppliers/suppliersbackend.phtml"/>
+	</reference>
+  </suppliers_adminhtml_suppliersbackend_index>
+  <suppliers_adminhtml_supplier_index>
+	<reference name="content">
+	  <block type="suppliers/adminhtml_supplier" name="supplier" />
+	</reference>
+  </suppliers_adminhtml_supplier_index>
+</layout>
