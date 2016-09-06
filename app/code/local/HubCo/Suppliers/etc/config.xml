@@ -23,7 +23,7 @@
 	  </suppliers>
 	  <suppliers_mysql4>
 		<class>HubCo_Suppliers_Model_Mysql4</class>
-		<entities>		  
+		<entities>
 			  <supplier>
 				<table>supplier</table>
 			  </supplier>
@@ -65,14 +65,9 @@
   <adminhtml>
 	<menu>
 	  <suppliers module="suppliers">
-		<title>Suppliers</title>
+		<title>Import Data</title>
 		<sort_order>100</sort_order>
 		<children>
-		  <suppliersbackend module="suppliers">
-			<title>Suupliers</title>
-			<sort_order>0</sort_order>
-			<action>admin_suppliers/adminhtml_suppliersbackend</action>
-		  </suppliersbackend>
 		  <supplier module="suppliers">
 		    <title>Manage Supplier</title>
 			<sort_order>0</sort_order>
@@ -92,9 +87,6 @@
 			  <title>Suppliers</title>
 			  <sort_order>1000</sort_order>
 			  <children>
-		  <suppliersbackend translate="title">
-			<title>Suupliers</title>
-		  </suppliersbackend>
 		  <supplier translate="title">
 			<title>Manage Supplier</title>
 			<sort_order>0</sort_order>
@@ -113,4 +105,4 @@
 	  </updates>
 	</layout>
   </adminhtml>
-</config> 
+</config>
