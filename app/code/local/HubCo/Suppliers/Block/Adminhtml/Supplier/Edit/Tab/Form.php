@@ -15,6 +15,27 @@ class HubCo_Suppliers_Block_Adminhtml_Supplier_Edit_Tab_Form extends Mage_Adminh
 						"name" => "name",
 						));
 
+            $fieldset->addField("attr_qty", "text", array(
+            "label" => Mage::helper("suppliers")->__("Qty Attribute"),
+            "class" => "required-entry",
+            "required" => true,
+            "name" => "attr_qty",
+            ));
+
+            $fieldset->addField("attr_price", "text", array(
+            "label" => Mage::helper("suppliers")->__("Price Attribute"),
+            "class" => "required-entry",
+            "required" => true,
+            "name" => "attr_price",
+            ));
+
+            $fieldset->addField("attr_part_num", "text", array(
+            "label" => Mage::helper("suppliers")->__("Part# Attribute"),
+            "class" => "required-entry",
+            "required" => true,
+            "name" => "attr_part_num",
+            ));
+
 
 				if (Mage::getSingleton("adminhtml/session")->getSupplierData())
 				{

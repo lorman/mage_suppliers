@@ -27,13 +27,28 @@ class HubCo_Suppliers_Block_Adminhtml_Supplier_Grid extends Mage_Adminhtml_Block
 			    "type" => "number",
 				"index" => "supplier_id",
 				));
-                
+
 				$this->addColumn("name", array(
 				"header" => Mage::helper("suppliers")->__("Name"),
 				"index" => "name",
 				));
-			$this->addExportType('*/*/exportCsv', Mage::helper('sales')->__('CSV')); 
-			$this->addExportType('*/*/exportExcel', Mage::helper('sales')->__('Excel'));
+
+        $this->addColumn("attr_qty", array(
+        "header" => Mage::helper("suppliers")->__("Qty Attribute"),
+        "index" => "attr_qty",
+        ));
+
+        $this->addColumn("attr_price", array(
+        "header" => Mage::helper("suppliers")->__("Price Attribute"),
+        "index" => "attr_price",
+        ));
+
+        $this->addColumn("attr_part_num", array(
+        "header" => Mage::helper("suppliers")->__("Part# Attribute"),
+        "index" => "attr_part_num",
+        ));
+			//$this->addExportType('*/*/exportCsv', Mage::helper('sales')->__('CSV'));
+			//$this->addExportType('*/*/exportExcel', Mage::helper('sales')->__('Excel'));
 
 				return parent::_prepareColumns();
 		}
@@ -44,7 +59,7 @@ class HubCo_Suppliers_Block_Adminhtml_Supplier_Grid extends Mage_Adminhtml_Block
 		}
 
 
-		
+
 		protected function _prepareMassaction()
 		{
 			$this->setMassactionIdField('supplier_id');
@@ -57,6 +72,6 @@ class HubCo_Suppliers_Block_Adminhtml_Supplier_Grid extends Mage_Adminhtml_Block
 				));
 			return $this;
 		}
-			
+
 
 }
