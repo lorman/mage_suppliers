@@ -2,7 +2,7 @@
 <config>
   <modules>
     <HubCo_Suppliers>
-      <version>0.1.1</version>
+      <version>0.1.2</version>
     </HubCo_Suppliers>
   </modules>
   <global>

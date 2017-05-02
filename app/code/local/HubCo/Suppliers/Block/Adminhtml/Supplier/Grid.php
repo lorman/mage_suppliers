@@ -33,6 +33,11 @@ class HubCo_Suppliers_Block_Adminhtml_Supplier_Grid extends Mage_Adminhtml_Block
 				"index" => "name",
 				));
 
+				$this->addColumn("po_supplier_id", array(
+				    "header" => Mage::helper("suppliers")->__("PO Supplier ID"),
+				    "index" => "po_supplier_id",
+				));
+
         $this->addColumn("attr_qty", array(
         "header" => Mage::helper("suppliers")->__("Qty Attribute"),
         "index" => "attr_qty",

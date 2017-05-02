@@ -15,6 +15,13 @@ class HubCo_Suppliers_Block_Adminhtml_Supplier_Edit_Tab_Form extends Mage_Adminh
 						"name" => "name",
 						));
 
+						$fieldset->addField("po_supplier_id", "text", array(
+						    "label" => Mage::helper("suppliers")->__("PO Supplier ID"),
+						    "class" => "required-entry",
+						    "required" => true,
+						    "name" => "po_supplier_id",
+						));
+
             $fieldset->addField("attr_qty", "text", array(
             "label" => Mage::helper("suppliers")->__("Qty Attribute"),
             "class" => "required-entry",
