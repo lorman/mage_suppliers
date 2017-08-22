@@ -7,7 +7,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 				$this->loadLayout()->_setActiveMenu("suppliers/supplier")->_addBreadcrumb(Mage::helper("adminhtml")->__("Supplier  Manager"),Mage::helper("adminhtml")->__("Supplier Manager"));
 				return $this;
 		}
-		public function indexAction() 
+		public function indexAction()
 		{
 			    $this->_title($this->__("Suppliers"));
 			    $this->_title($this->__("Manager Supplier"));
@@ -16,11 +16,11 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 				$this->renderLayout();
 		}
 		public function editAction()
-		{			    
+		{
 			    $this->_title($this->__("Suppliers"));
 				$this->_title($this->__("Supplier"));
 			    $this->_title($this->__("Edit Item"));
-				
+
 				$id = $this->getRequest()->getParam("id");
 				$model = Mage::getModel("suppliers/supplier")->load($id);
 				if ($model->getId()) {
@@ -32,7 +32,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 					$this->getLayout()->getBlock("head")->setCanLoadExtJs(true);
 					$this->_addContent($this->getLayout()->createBlock("suppliers/adminhtml_supplier_edit"))->_addLeft($this->getLayout()->createBlock("suppliers/adminhtml_supplier_edit_tabs"));
 					$this->renderLayout();
-				} 
+				}
 				else {
 					Mage::getSingleton("adminhtml/session")->addError(Mage::helper("suppliers")->__("Item does not exist."));
 					$this->_redirect("*/*/");
@@ -80,7 +80,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 
 					try {
 
-						
+
 
 						$model = Mage::getModel("suppliers/supplier")
 						->addData($post_data)
@@ -96,7 +96,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 						}
 						$this->_redirect("*/*/");
 						return;
-					} 
+					}
 					catch (Exception $e) {
 						Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
 						Mage::getSingleton("adminhtml/session")->setSupplierData($this->getRequest()->getPost());
@@ -118,7 +118,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 						$model->setId($this->getRequest()->getParam("id"))->delete();
 						Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Item was successfully deleted"));
 						$this->_redirect("*/*/");
-					} 
+					}
 					catch (Exception $e) {
 						Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
 						$this->_redirect("*/*/edit", array("id" => $this->getRequest()->getParam("id")));
@@ -127,7 +127,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 				$this->_redirect("*/*/");
 		}
 
-		
+
 		public function massRemoveAction()
 		{
 			try {
@@ -143,7 +143,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 			}
 			$this->_redirect('*/*/');
 		}
-			
+
 		/**
 		 * Export order grid to CSV format
 		 */
@@ -152,7 +152,7 @@ class HubCo_Suppliers_Adminhtml_SupplierController extends Mage_Adminhtml_Contro
 			$fileName   = 'supplier.csv';
 			$grid       = $this->getLayout()->createBlock('suppliers/adminhtml_supplier_grid');
 			$this->_prepareDownloadResponse($fileName, $grid->getCsvFile());
-		} 
+		}
 		/**
 		 *  Export order grid to Excel XML format
 		 */
